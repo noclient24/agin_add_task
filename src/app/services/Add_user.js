@@ -20,3 +20,14 @@ export const Login=async(formsData)=>{
   }
 
 }
+
+export const currentuser=async()=>{
+
+  try {
+    const response=await HttpsResponse.get("/api/current")
+    return response.data
+  } catch (error) {
+    console.log("Login Fail error is ",error)
+  }
+
+}
