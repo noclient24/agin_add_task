@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Add_Task } from "@/app/services/Add_user";
+
 
 const AddTaskPage = () => {
   const router = useRouter();
   const [taskData, setTaskData] = useState({
     title: "",
-    description: "",
-    status: "pending", // default status
+    content: "",
+    status: "pending",
   });
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +20,6 @@ const AddTaskPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Basic validation
     if (!taskData.title.trim()) {
       toast.error("Task title is required");
       setLoading(false);
@@ -26,15 +27,17 @@ const AddTaskPage = () => {
     }
 
     try {
-      if (response.ok) {
-        toast.success("Task created successfully!");
-        router.push("/tasks");
-      } else {
-        const errorData = await response.json();
-        toast.error(errorData.message || "Failed to create task");
-      }
+      // Add userId from your auth system
+      const taskWithUser = {
+        ...taskData,
+        userId: "your-user-id-here" // Replace with actual user ID
+      };
+      
+      await Add_Task(taskWithUser);
+      toast.success("Task created successfully!");
+      router.push("/");
     } catch (error) {
-      toast.error("An error occurred while creating the task");
+      toast.error(error.message || "Failed to create task");
       console.error("Error:", error);
     } finally {
       setLoading(false);
@@ -43,7 +46,7 @@ const AddTaskPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTaskData((prev) => ({ ...prev, [name]: value }));
+    setTaskData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -60,9 +63,7 @@ const AddTaskPage = () => {
             animate={{ scale: 1 }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl font-bold text-gray-800">
-              Create New Task
-            </h2>
+            <h2 className="text-2xl font-bold text-gray-800">Create New Task</h2>
             <p className="mt-2 text-gray-600">Fill in the details below</p>
           </motion.div>
 
@@ -72,10 +73,7 @@ const AddTaskPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
-              <label
-                htmlFor="title"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                 Task Title
               </label>
               <input
@@ -95,17 +93,14 @@ const AddTaskPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="content" className="block text-sm font-medium text-gray-700">
                 Description
               </label>
               <textarea
-                id="description"
-                name="description"
+                id="content"
+                name="content"
                 rows={4}
-                value={taskData.description}
+                value={taskData.content}
                 onChange={handleChange}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter task description"
@@ -117,10 +112,7 @@ const AddTaskPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <label
-                htmlFor="status"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="status" className="block text-sm font-medium text-gray-700">
                 Status
               </label>
               <select
@@ -131,7 +123,6 @@ const AddTaskPage = () => {
                 className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
               >
                 <option value="pending">Pending</option>
-             
                 <option value="completed">Completed</option>
               </select>
             </motion.div>

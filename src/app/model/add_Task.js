@@ -1,7 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 
-const Add_Task_Model = new Schema({
-  tittle: {
+
+const TaskSchema = new Schema({
+  title: {
     type: String,
     required: true,
   },
@@ -9,24 +10,21 @@ const Add_Task_Model = new Schema({
     type: String,
     required: true,
   },
-  Date: {
+  date: {
     type: Date,
-    required: true,
-    default: new Date.now(),
+    default: Date.now,
   },
   status: {
     type: String,
     enum: ["pending", "completed"],
     default: "pending",
   },
-  UserId: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
 });
 
-const Add_Task_Models =
-  mongoose.models.Add_Task_Model ||
-  mongoose.model("Add_Task_Models", Add_Task_Model);
+const Task = mongoose.models.Task || mongoose.model("Task", TaskSchema);
 
-export { Add_Task_Models };
+export {Task}
