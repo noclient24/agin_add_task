@@ -22,5 +22,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/", "/pages/SignUp", "/pages/Login","/pages/add_Task"],
+  matcher: ["/", "/pages/SignUp", "/pages/Login","/pages/add_Task","/pages/showtask"],
 };

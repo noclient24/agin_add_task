@@ -69,7 +69,7 @@ const Navbar = () => {
               {showTaskDropdown && (
                 <div className="bg-white absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 z-50">
                   <Link
-                    href="#"
+                    href="../pages/showtask"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
                     <FontAwesomeIcon icon={faTasks} className="mr-2" />
@@ -139,7 +139,7 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            href="#"
+            href="../pages/showtask"
             className="block pl-3 pr-4 py-2 text-base font-medium text-white hover:bg-blue-600"
           >
             <FontAwesomeIcon icon={faTasks} className="mr-2" />
