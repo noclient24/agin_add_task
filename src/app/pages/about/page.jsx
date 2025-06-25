@@ -243,21 +243,24 @@ const teamMembers = [
     name: "Sarah Williams",
     role: "Lead Developer",
     bio: "Builds the technology that powers TaskMaster's innovative features.",
-    image: "https://t4.ftcdn.net/jpg/01/34/66/75/360_F_134667500_jlXiS1X3NiGOPCoMnG4sycAGLDn2tOtS.jpg"
+    image: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg"
+
   },
   {
     id: 3,
     name: "Michael Chen",
     role: "Product Designer",
     bio: "Ensures TaskMaster is intuitive and beautiful to use every day.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg"
+        image: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg"
+
   },
   {
     id: 4,
     name: "Emily Rodriguez",
     role: "Customer Success",
     bio: "Dedicated to helping users get the most out of TaskMaster.",
-    image: "https://randomuser.me/api/portraits/women/63.jpg"
+        image: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg"
+
   }
 ];
 
