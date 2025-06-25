@@ -8,3 +8,12 @@ bcrypt_js=10
 Mongobd_Url=mongodb+srv://Abdullah:Abdullah@cluster0.ahozftg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 bcrypt_js=10;
 JWT_KEY=aghasgdjhgadsh
+
+
+
+Mongobd_Url=mongodb+srv://Abdullah:Abdullah@cluster0.ahozftg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+bcrypt_js=10
+JWT_KEY=aghasgdjhgadsh
+
+local=http://localhost:3000/
+Host=agin-add-task.vercel.app
