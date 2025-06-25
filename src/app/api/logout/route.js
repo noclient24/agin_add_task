@@ -1,24 +1,25 @@
-import { NextResponse } from "next/server"
+import { NextResponse } from "next/server";
 
+export async function POST() {
+  try {
+    const response = NextResponse.json(
+      { message: "Logout successful", success: true },
+      { status: 200 }
+    );
+    
+    // Clear the cookie
+    response.cookies.set("logintoken", "", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      expires: new Date(0),
+      path: "/",
+    });
 
-
-export const POST = async = () => {
-    try {
-
-        const response = NextResponse.json({
-            message: "logout successfully !"
-        })
-
-        response.cookies.set("logintoken", "", {
-            httpOnly: true, // Ensure cookie is not accessible through JavaScript
-            secure: process.env.NODE_ENV === 'production', // Only set secure cookies in production
-            expires: new Date(0) // Expire immediately
-        });
-
-    } catch (error) {
-        console.log(error)
-        return NextResponse.json({
-            message: "logout error"
-        })
-    }
+    return response;
+  } catch (error) {
+    return NextResponse.json(
+      { error: error.message, success: false },
+      { status: 500 }
+    );
+  }
 }
