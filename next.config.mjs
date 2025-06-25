@@ -4,7 +4,7 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'randomuser.me',
-      "www.shutterstock.com"
+      "www.shutterstock.com","https://t4.ftcdn.net"
     ],
   },
 };

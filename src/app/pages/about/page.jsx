@@ -243,7 +243,7 @@ const teamMembers = [
     name: "Sarah Williams",
     role: "Lead Developer",
     bio: "Builds the technology that powers TaskMaster's innovative features.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    image: "https://t4.ftcdn.net/jpg/01/34/66/75/360_F_134667500_jlXiS1X3NiGOPCoMnG4sycAGLDn2tOtS.jpg"
   },
   {
     id: 3,
