@@ -236,7 +236,7 @@ const teamMembers = [
     name: "Alex Johnson",
     role: "Founder & CEO",
     bio: "Passionate about productivity and creating tools that make life easier.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "https://www.shutterstock.com/image-photo/smiling-african-american-millennial-businessman-600nw-1437938108.jpg"
   },
   {
     id: 2,
