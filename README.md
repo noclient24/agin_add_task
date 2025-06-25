@@ -21,6 +21,7 @@ A modern task management application built with Next.js, React, and MongoDB.
 ### Frontend
 - **Next.js** (v13+) - React framework for server-side rendering and static site generation
 - **React** (v18+) - JavaScript library for building user interfaces
+- - **Next js** (v15+) - JavaScript library for building user interfaces
 - **Tailwind CSS** - Utility-first CSS framework for styling
 - **React Icons** - Icon library for React applications
 - **React Toastify** - Notification system
@@ -63,8 +64,3 @@ A modern task management application built with Next.js, React, and MongoDB.
 - MongoDB Atlas account or local MongoDB installation
 - Git
 
-### Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/taskmaster.git
-   cd taskmaster
