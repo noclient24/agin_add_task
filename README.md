@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TaskMaster - Task Management Application
 
-## Getting Started
+![TaskMaster Logo](public/logo.png) <!-- Add your logo if available -->
 
-First, run the development server:
+A modern task management application built with Next.js, React, and MongoDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [API Documentation](#api-documentation)
+- [Folder Structure](#folder-structure)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Frontend
+- **Next.js** (v13+) - React framework for server-side rendering and static site generation
+- **React** (v18+) - JavaScript library for building user interfaces
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **React Icons** - Icon library for React applications
+- **React Toastify** - Notification system
+- **Axios** - HTTP client for API requests
+- **Formik & Yup** - Form handling and validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Backend
+- **Next.js API Routes** - Built-in API routes for backend functionality
+- **MongoDB** - NoSQL database for data storage
+- **Mongoose** - MongoDB object modeling for Node.js
+- **JWT** (JSON Web Tokens) - For authentication
+- **Bcrypt** - Password hashing
 
-## Learn More
+### Development Tools
+- **Git** - Version control system
+- **ESLint** - JavaScript linter
+- **Prettier** - Code formatter
+- **Husky** - Git hooks
+- **Commitlint** - Conventional commit messages
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Core Features
+- User authentication (Login/Register)
+- Task creation, editing, and deletion
+- Task categorization (Completed/Pending)
+- Responsive design for all devices
+- Dark/Light mode (if implemented)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Advanced Features
+- Real-time updates (if implemented)
+- Task search and filtering
+- User profile management
+- API documentation
 
-## Deploy on Vercel
+## Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB Atlas account or local MongoDB installation
+- Git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/taskmaster.git
+   cd taskmaster
