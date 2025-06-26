@@ -1,32 +1,34 @@
 "use client"
 import { useEffect, useState } from "react"
-
 import { currentuser } from "../services/Add_user"
 import { UserContext } from "./usecontext"
 
 
-export const Useprovider = ({ children }) => {
+export const UserProvider = ({ children }) => {
+  const [user, setuser] = useState(null);
+  const [loading, setLoading] = useState(true); // Add loading state
 
-    const [user, setuser] = useState(undefined)
-    useEffect(() => {
+  const fetchUser = async () => {
+    try {
+      const currentUser = await currentuser();
+      setuser(currentUser);
+    } catch (error) {
+      setuser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-        const load = async () => {
-            try {
-                const tempuser = await currentuser();
-                setuser({ ...tempuser })
-            } catch (error) {
-                console.log(error)
-                setuser(undefined)
-            }
-        }
-        load()
-    }, [])
+  useEffect(() => {
+    fetchUser();
+    const handleFocus = () => fetchUser();
+    window.addEventListener("focus", handleFocus);
+    return () => window.removeEventListener("focus", handleFocus);
+  }, []);
 
-
-    return (
-        <UserContext.Provider value={{ user, setuser }}>
-            {children}
-        </UserContext.Provider>
-    )
-}
-
+  return (
+    <UserContext.Provider value={{ user, setuser, refetchUser: fetchUser, loading }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
